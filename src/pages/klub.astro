@@ -1,0 +1,5 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import {club} from '../data/site';
+---
+<MainLayout title="O klubu | NK Gavran 2003"><section class="page-hero"><div class="container"><div class="eyebrow">NAŠ KLUB</div><h1>NK GAVRAN 2003</h1><p>Nogometni klub s Laništa, Zagreb.</p></div></section><section class="section"><div class="container split"><div><div class="eyebrow">ZAJEDNO NA TERENU</div><h2>KLUB KOJI<br/>POVEZUJE.</h2><p>NK Gavran 2003 okuplja ljubitelje nogometa na Laništu. Ovdje ćemo uskoro dodati službenu povijest kluba, postignuća i predstavljanje ljudi koji stoje iza njegovog rada.</p><p><strong>Lokacija:</strong> {club.address}</p><a class="btn btn-dark" href="/kontakt">KONTAKTIRAJ KLUB ↗</a></div><img class="split-image" src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=85" alt="Nogometni teren – ilustracija"/></div></section></MainLayout>

@@ -1,0 +1,4 @@
+---
+import {club} from '../data/site';
+---
+<footer class="footer"><div class="container"><div class="footer-grid"><div><div class="brand"><img class="brand-logo" src="/images/nk-gavran-grb.png" alt="Grb NK Gavran 2003"/><div><strong>NK GAVRAN 2003</strong><small>LANIŠTE · ZAGREB</small></div></div><p>Naš kvart. Naš klub. Naš ponos.</p><p>{club.address}</p></div><div><h4>KLUB</h4><a href="/klub">Povijest i uprava</a><a href="/momcadi">Momčadi</a><a href="/utakmice">Utakmice</a></div><div><h4>INFORMACIJE</h4><a href="/skola-nogometa">Škola nogometa</a><a href="/roditelji">Za roditelje</a><a href="/kontakt">Kontakt</a><a href={club.hns} target="_blank" rel="noopener noreferrer">HNS Semafor ↗</a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} NK Gavran 2003</span><span>Klupski web · U izradi</span></div></div></footer>

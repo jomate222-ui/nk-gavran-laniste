@@ -1,0 +1,10 @@
+---
+import {galleries} from '../data/galleries';
+---
+<section class="section gallery-promo" id="momcadi">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">NAŠE MOMČADI · NAŠI TRENUCI</div><h2>GALERIJE PO UZRASTIMA</h2><p>Od prvih nogometnih koraka do seniorske momčadi. Pogledajte fotografije naših kategorija.</p></div><a class="gallery-all-link" href="/galerije">SVE GALERIJE ↗</a></div>
+  <div class="gallery-team-grid">{galleries.map((g,i)=><a class="gallery-team-card" href={`/galerije/${g.slug}/`} aria-label={`Otvori galeriju: ${g.name}`}><img src={g.photos[0]} alt={`Ilustrativna fotografija – ${g.name}`} loading="lazy"/><div class="gallery-team-overlay"><span>0{i+1} / NK GAVRAN</span><h3>{g.name}</h3><p>{g.subtitle}</p><strong>POGLEDAJ GALERIJU ↗</strong></div></a>)}</div>
+  <p class="gallery-demo-note">Fotografije su privremene ilustracije, ne prikazuju nužno članove NK Gavran.</p>
+ </div>
+</section>

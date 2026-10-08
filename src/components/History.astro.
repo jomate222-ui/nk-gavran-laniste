@@ -1,0 +1,153 @@
+
+<section class="gavran-history" id="povijest">
+  <div class="history-container">
+
+    <div class="history-content">
+      <span class="history-label">NAŠA PRIČA</span>
+
+      <h2>POVIJEST KLUBA</h2>
+
+      <h3>Naš kvart. Naš klub. Naš ponos.</h3>
+
+      <p>
+        NK Gavran svoju priču započinje
+        <strong>26. listopada 2003. godine</strong>
+        na zagrebačkom Laništu. Klub nosi ime po
+        <strong>Damiru Tomljanoviću – Gavranu</strong>,
+        heroju Domovinskog rata, u čiju je čast osnovan.
+      </p>
+
+      <p>
+        Od samih početaka klub je okupljao ljubitelje
+        nogometa i mlade igrače s Laništa i okolnih
+        kvartova. Seniorska momčad započela je
+        natjecanje u sezoni <strong>2008./2009.</strong>,
+        a nakon prekida rada klub je
+        <strong>2017. godine</strong> ponovno osnovan
+        pod imenom NK Gavran 2003.
+      </p>
+
+      <p>
+        Već u prvoj sezoni novog početka klub je
+        osvojio naslov prvaka
+        <strong>3. Zagrebačke nogometne lige</strong>.
+      </p>
+
+      <p>
+        Danas klub nastavlja svoju nogometnu priču
+        kroz seniorsku momčad i školu nogometa,
+        okupljajući nove generacije igrača.
+      </p>
+
+      <p class="history-location">
+        Naš dom nalazi se u
+        <strong>Sportskom centru Gavran</strong>,
+        na adresi <strong>Remetinečka cesta bb</strong>
+        u Zagrebu, preko puta hotela.
+      </p>
+    </div>
+
+    <div class="history-image">
+      <img
+        src="/images/nk-gavran-grb.png"
+        alt="Grb NK Gavran 2003 Zagreb"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .gavran-history {
+    padding: 90px 24px;
+    background: #ffffff;
+  }
+
+  .history-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .history-label {
+    display: block;
+    color: #d00000;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .history-content h2 {
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #151515;
+    margin: 0 0 18px;
+  }
+
+  .history-content h3 {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0 0 24px;
+    color: #222;
+  }
+
+  .history-content p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #555;
+    margin: 0 0 17px;
+  }
+
+  .history-content strong {
+    color: #181818;
+    font-weight: 700;
+  }
+
+  .history-location {
+    border-left: 3px solid #d00000;
+    padding-left: 18px;
+    margin-top: 25px !important;
+  }
+
+  .history-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+
+  .history-image img {
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    object-fit: contain;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  @media (max-width: 768px) {
+    .gavran-history {
+      padding: 60px 20px;
+    }
+
+    .history-container {
+      grid-template-columns: 1fr;
+      gap: 35px;
+    }
+
+    .history-content h2 {
+      font-size: 38px;
+    }
+
+    .history-image img {
+      max-width: 190px;
+    }
+  }
+</style>

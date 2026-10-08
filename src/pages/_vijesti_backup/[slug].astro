@@ -1,0 +1,7 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import {articles} from '../../data/site';
+export function getStaticPaths(){return articles.map(article=>({params:{slug:article.slug},props:{article}}));}
+const {article}=Astro.props;
+---
+<MainLayout title={`${article.title} | NK Gavran 2003`} description={article.excerpt}><section class="page-hero"><div class="container"><div class="eyebrow">{article.category}</div><h1>{article.title}</h1><p>{article.excerpt}</p></div></section><section class="section"><div class="container article-body"><img src={article.image} alt="Nogometna ilustracija" style="width:100%;max-height:450px;object-fit:cover"/><p>{article.excerpt}</p><p>Ovo je početni sadržaj. Uskoro ćemo dodati potvrđene klupske informacije i fotografije.</p><a class="btn btn-dark" href="/vijesti">← SVE VIJESTI</a></div></section></MainLayout>

@@ -1,0 +1,5 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import {club} from '../data/site';
+---
+<MainLayout title="Utakmice i rezultati | NK Gavran 2003"><section class="page-hero"><div class="container"><div class="eyebrow">NATJECANJA</div><h1>UTAKMICE I REZULTATI</h1><p>Raspored, rezultati i ljestvice putem HNS Semafora.</p></div></section><section class="section alt"><div class="container"><div class="section-head"><div><div class="eyebrow">SLUŽBENI PODACI</div><h2>HNS SEMAFOR</h2><p>U ugrađenom prikazu odaberite sezonu, uzrast i natjecanje ako su dostupni.</p></div><a class="btn btn-dark" href={club.hns} target="_blank" rel="noopener noreferrer">OTVORI NA HNS-U ↗</a></div><p class="note">Privremeni testni iframe. Ugrađivanje i funkcionalnost filtara treba dodatno provjeriti te potvrditi uvjete korištenja HNS-a. Ako filter ne radi, otvorite službenu stranicu gumbom iznad.</p><div class="iframe-wrap" style="margin-top:22px"><iframe src={club.hns} title="HNS Semafor – NK Gavran 2003" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></section></MainLayout>

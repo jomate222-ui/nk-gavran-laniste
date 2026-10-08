@@ -1,0 +1,21 @@
+---
+import {notices,ages,hnsUrl} from '../data/clubUpdates';
+---
+<section id="klupski-centar" class="section notice-hub">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">SVE NA JEDNOM MJESTU</div><h2>OGLASNA PLOČA</h2><p>Odaberite uzrast i odmah pogledajte termine treninga, trenera i najvažnije informacije za momčad.</p></div><span class="demo-stamp">DEMO SADRŽAJ · POTREBNA POTVRDA KLUBA</span></div>
+  <div class="age-tabs" role="group" aria-label="Odabir uzrasta">{ages.map((age,i)=><button class:list={['age-tab',{'active':i===0}]} type="button" data-age={age} aria-pressed={i===0}>{notices[age].name}</button>)}</div>
+  <div class="board-shell">
+   <div class="board-top"><div><span class="hub-kicker">KLUPSKE INFORMACIJE · <span id="age-label">Zagići</span></span><h3 id="board-title">OGLASNA PLOČA – ZAGIĆI</h3></div><a class="board-hns" href={hnsUrl} target="_blank" rel="noopener noreferrer">HNS RASPORED UTAKMICA ↗</a></div>
+   <div class="board-facts"><div><small>DANI TRENINGA</small><strong id="training-days"></strong></div><div><small>VRIJEME TRENINGA</small><strong id="training-time"></strong></div><div><small>LOKACIJA</small><strong id="training-place"></strong></div></div>
+   <div class="board-main"><div class="board-notices"><h4>AKTUALNE OBAVIJESTI</h4><div id="notice-list"></div></div><aside class="board-aside"><div class="coach-portrait"><img id="board-coach-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80" alt="Demonstracijska fotografija trenera" loading="lazy"/></div><span class="hub-kicker">TRENER KATEGORIJE</span><h4 id="board-coach-name"></h4><p id="board-coach-role"></p><p class="demo-small">Ime i fotografija su demonstracijski.</p><hr/><h4>UTAKMICE I REZULTATI</h4><p>Za službeni termin, protivnika, mjesto odigravanja i rezultat otvorite HNS Semafor i odaberite odgovarajući uzrast.</p><a class="btn btn-red" href={hnsUrl} target="_blank" rel="noopener noreferrer">OTVORI HNS SEMAFOR ↗</a></aside></div>
+  </div>
+ </div>
+</section>
+<script define:vars={{notices,ages}}>
+ const btns=[...document.querySelectorAll('.notice-hub [data-age]')];
+ const byId=id=>document.getElementById(id);
+ const photos={zagici:'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80',limaci:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80',kadeti:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=700&q=80',juniori:'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80',seniori:'https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=700&q=80'};
+ function choose(age){const d=notices[age];if(!d)return;byId('age-label').textContent=d.name;byId('board-title').textContent='OGLASNA PLOČA – '+d.name.toUpperCase();byId('training-days').textContent=d.days;byId('training-time').textContent=d.time;byId('training-place').textContent=d.place;byId('board-coach-name').textContent=d.coach;byId('board-coach-role').textContent=d.role;byId('board-coach-photo').src=photos[age];byId('notice-list').replaceChildren(...d.items.map(([tag,title,description])=>{const a=document.createElement('article');a.className='notice-row';const t=document.createElement('span');t.className='notice-tag';t.textContent=tag;const h=document.createElement('h5');h.textContent=title;const p=document.createElement('p');p.textContent=description;a.append(t,h,p);return a;}));btns.forEach(b=>{const selected=b.dataset.age===age;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));});}
+ btns.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.age)));choose('zagici');
+</script>

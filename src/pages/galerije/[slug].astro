@@ -1,0 +1,9 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import {galleries} from '../../data/galleries';
+export function getStaticPaths(){return galleries.map(g=>({params:{slug:g.slug},props:{gallery:g}}));}
+const {gallery}=Astro.props;
+---
+<MainLayout title={`Galerija ${gallery.name} | NK Gavran 2003`}>
+<section class="section gallery-detail"><div class="container"><a class="gallery-back" href="/galerije">← SVE GALERIJE</a><div class="eyebrow">NK GAVRAN 2003 · LANIŠTE</div><h1>GALERIJA: {gallery.name.toUpperCase()}</h1><p>{gallery.subtitle}. Fotografije s treninga, utakmica i klupskih događanja bit će ovdje.</p><div class="gallery-photo-grid">{gallery.photos.map((photo,i)=><figure><a href={photo} target="_blank" rel="noopener noreferrer" aria-label={`Otvori fotografiju ${i+1}`}><img src={photo} alt={`Ilustrativna nogometna fotografija ${i+1}`} loading="lazy"/></a><figcaption>Demo fotografija {i+1}</figcaption></figure>)}</div><p class="gallery-demo-note">Ovo su privremene ilustrativne fotografije. Prije objave zamijeniti stvarnim klupskim fotografijama uz odgovarajuća dopuštenja, osobito za djecu.</p><a class="gallery-all-link" href="/galerije">← NATRAG NA SVE UZRASTE</a></div></section>
+</MainLayout>

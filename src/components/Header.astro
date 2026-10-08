@@ -1,0 +1,5 @@
+---
+const nav=[['Naslovnica','/'],['Obavijesti','/#klupski-centar'],['Galerije','/galerije'],['Povijest','/#povijest'],['Treneri i uprava','/#ljudi'],['Škola nogometa','/skola-nogometa'],['Kontakt','/kontakt']];
+---
+<header class="header"><div class="topline"></div><div class="container nav-inner"><a class="brand" href="/"><img src="/images/nk-gavran-grb.png" alt="Grb NK Gavran 2003" class="brand-logo"/><div><strong>NK GAVRAN 2003</strong><small>LANIŠTE · ZAGREB</small></div></a><button class="nav-toggle" id="menu-toggle" aria-label="Izbornik" aria-controls="main-menu" aria-expanded="false">☰</button><nav class="nav-links" id="main-menu" aria-label="Glavna navigacija">{nav.map(([label,href])=><a href={href}>{label}</a>)}</nav><a class="btn btn-red" href="/skola-nogometa">UPISI ↗</a></div></header>
+<script>const t=document.querySelector<HTMLButtonElement>('#menu-toggle');const m=document.querySelector('#main-menu');t?.addEventListener('click',()=>{const v=m?.classList.toggle('open')??false;t.setAttribute('aria-expanded',String(v));});</script>

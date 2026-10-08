@@ -1,0 +1,5 @@
+---
+import {teams} from '../../data/site';
+export function getStaticPaths(){return teams.map(t=>({params:{slug:t.slug}}));}
+return Astro.redirect('/momcadi');
+---

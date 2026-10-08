@@ -1,0 +1,5 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import {articles} from '../../data/site';
+---
+<MainLayout title="Vijesti | NK Gavran 2003"><section class="page-hero"><div class="container"><div class="eyebrow">KLUPSKE INFORMACIJE</div><h1>VIJESTI</h1><p>Novosti, najave i informacije iz NK Gavran 2003.</p></div></section><section class="section alt"><div class="container cards-3">{articles.map(a=><a class="card" href={`/vijesti/${a.slug}`}><img class="card-image" src={a.image} alt="Nogometna ilustracija"/><div class="card-body"><div class="eyebrow">{a.category}</div><h3 style="margin-top:12px">{a.title}</h3><p>{a.excerpt}</p><span class="text-link">PROČITAJ ↗</span></div></a>)}</div></section></MainLayout>

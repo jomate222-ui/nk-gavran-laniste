@@ -1,0 +1,4 @@
+---
+import {articles} from '../data/site';
+---
+<section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow">AKTUALNO IZ KLUBA</div><h2>VIJESTI I OBAVIJESTI</h2><p>Sve važne informacije na jednom mjestu.</p></div><a class="text-link" href="/vijesti">SVE VIJESTI ↗</a></div><div class="cards-3">{articles.map((article)=><a class="card" href={`/vijesti/${article.slug}`}><img class="card-image" src={article.image} alt="Nogometna fotografija – ilustracija" loading="lazy"/><div class="card-body"><div class="eyebrow">{article.category} · {article.date}</div><h3 style="margin-top:12px">{article.title}</h3><p>{article.excerpt}</p><span class="text-link">PROČITAJ VIŠE ↗</span></div></a>)}</div></div></section>
