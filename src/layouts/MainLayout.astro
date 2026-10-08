@@ -4,4 +4,5 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 const {title='NK Gavran 2003 | Nogometni klub Lanište, Zagreb',description='NK Gavran 2003 – nogometni klub s Laništa. Momčadi, škola nogometa, utakmice, vijesti i informacije za roditelje.'}=Astro.props;
 ---
-<!doctype html><html lang="hr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#091a35"/><title>{title}</title></head><body><Header/><main><slot/></main><Footer/></body></html>
+<!doctype html><html lang="hr"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#091a35"/><title>{title}</title>  <link rel="stylesheet" href="/gavran-polish.css" />
+</head><body><Header/><main><slot/></main><Footer/></body></html>

@@ -1,0 +1,141 @@
+/* NK GAVRAN – V7 POLISH */
+
+/* Ujednačeni razmaci sekcija */
+.section {
+  padding-top: clamp(60px, 7vw, 95px);
+  padding-bottom: clamp(60px, 7vw, 95px);
+}
+
+/* Naslovi sekcija – bez promjene postojećeg fonta i veličine */
+.section-head {
+  margin-bottom: clamp(28px, 4vw, 46px);
+}
+
+.section-head .eyebrow {
+  margin-bottom: 12px;
+}
+
+.section-head h2 {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+
+.section-head p {
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+/* Tekst */
+.history-content p {
+  line-height: 1.85;
+  margin-bottom: 19px;
+}
+
+/* Kartice */
+.person-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (hover: hover) {
+  .person-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Gumbi i linkovi */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #d00000;
+  outline-offset: 4px;
+}
+
+/* Mobilni prikaz */
+@media (max-width: 767px) {
+  .section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .section-head {
+    margin-bottom: 28px;
+  }
+
+  .history-layout {
+    gap: 0;
+  }
+
+  /* Sakrij veliki grb u Povijesti kluba */
+  .history-visual {
+    display: none !important;
+  }
+
+  .history-content p {
+    line-height: 1.8;
+  }
+
+  .people-grid {
+    gap: 20px;
+  }
+
+  .cta-inner {
+    gap: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .person-card {
+    transition: none;
+  }
+}
+
+/* V7.1 – mobilni hero i završne dorade */
+
+@media (max-width: 767px) {
+
+  /* Sakrij samo veliki grb u hero sekciji */
+  .hero .hero-emblem {
+    display: none !important;
+  }
+
+  /* Hero tekst koristi punu širinu */
+  .hero .hero-content {
+    display: block;
+  }
+
+  .hero .hero-copy {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Gumbi se uredno prelamaju */
+  .hero .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Ujednačeni razmaci u sekcijama */
+  .section-head {
+    margin-bottom: 28px;
+  }
+
+  /* Uredniji tekst povijesti */
+  .history-content p {
+    margin-bottom: 18px;
+  }
+}
+
+/* Bolji raspored teksta */
+.history-content p {
+  overflow-wrap: break-word;
+}
+
+/* Izbjegavanje preširokih slika */
+img {
+  max-width: 100%;
+}
